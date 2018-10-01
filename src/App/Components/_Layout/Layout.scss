@@ -1,0 +1,154 @@
+@import "./App/variables";
+
+.root-row {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  .layout-main {
+    position: fixed;
+    height: Calc(100vh - #{$header-height});
+    width: Calc(100vw - #{$side-nav-width});
+    left: $side-nav-width;
+    top: $header-height;
+    transition: all $transition-speed ease;
+    background-color: #e8e8e8;
+  }
+
+  &.menu-expanded .layout-nav,
+  .layout-nav:hover {
+    width: $side-nav-expanded-width;
+
+    .menu-desc {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nysctreets-logo {
+      width: 66px !important;
+    }
+
+    .prism-logo {
+      font-size: 21px !important;
+    }
+  }
+
+  &.menu-expanded {
+    .layout-main {
+      left: $side-nav-expanded-width;
+      width: Calc(100vw - #{$side-nav-expanded-width});
+      height: Calc(100vh - #{$header-height});
+    }
+  }
+
+  .header-content {
+    flex-grow: 1;
+    height: $header-height;
+    background-image: $primary-gradient;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
+    transition: width, left $transition-speed ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .btn-menu-expand {
+      background-color: unset;
+      border: none;
+      color: white;
+      font-size: 25px;
+      margin-left: 3px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .layout-nav {
+    $bg-color: white;
+    width: $side-nav-width;
+    min-width: $side-nav-width;
+    background-color: $bg-color;
+    border-right: 1px solid rgba(0, 0, 0, 0.0625);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width $transition-speed ease;
+
+    .menu-desc {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-speed linear;
+      font-weight: 500;
+    }
+
+    .app-logo {
+      height: $header-height;
+      display: flex;
+      flex-direction: column;
+      width: inherit;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
+      align-items: center;
+
+      .nysctreets-logo {
+        width: 54px;
+        margin-left: 4px;
+        transition: width $transition-speed ease;
+      }
+
+      .prism-logo {
+        // width: 63px;
+        transition: width $transition-speed ease;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      -webkit-padding-start: unset;
+
+      .parent-feature {
+        margin-top: 25px;
+
+        .parent-icon {
+          padding: 5px 25px;
+          cursor: pointer;
+          color: gray;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 15px;
+          white-space: nowrap;
+          min-height: 50px;
+
+          svg {
+            font-size: 1.4rem;
+            margin-right: 15px;
+            color: #5e5798;
+          }
+
+          &:hover {
+            background-image: $primary-gradient;
+            color: white;
+
+            svg {
+              color: white !important;
+            }
+          }
+        }
+      }
+    }
+
+    .dot-logo {
+      align-self: center;
+      margin-top: auto;
+      margin-bottom: 5px;
+      width: 60px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "analytics",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.0.0-beta.54",
+    "@fortawesome/fontawesome-svg-core": "^1.2.1",
+    "@fortawesome/free-solid-svg-icons": "^5.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.0",
+    "antd": "^3.7.0",
+    "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
+    "dexie": "^2.0.4",
+    "ol": "^5.1.3",
+    "proj4": "^2.4.4",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts backup": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "scripts": {
+    "build-env-dev": "node build-env.js ANALYTICS_ENV=DEV",
+    "build-env-qa": "node build-env.js ANALYTICS_ENV=QA",
+    "build-env-prod": "node build-env.js ANALYTICS_ENV=PROD",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-app-rewired start",
+    "start-dev": "npm-run-all -s build-env-dev start-js",
+    "start": "npm-run-all -p watch-css start-dev",
+    "build-qa": "npm-run-all -s build-css build-env-qa build-js",
+    "build-prod": "npm-run-all -s build-css build-env-prod build-js",
+    "build-js": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.8.0",
+    "node-sass-chokidar": "^1.3.3",
+    "npm-run-all": "^4.1.3",
+    "react-app-rewire-less": "^2.1.2",
+    "react-app-rewired": "^1.5.2",
+    "react-scripts": "^1.1.4"
+  }
+}

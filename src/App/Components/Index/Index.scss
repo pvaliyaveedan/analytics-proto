@@ -1,0 +1,21 @@
+@import "./App/variables";
+
+.index-layout {
+  display: flex;
+  flex-direction: column;
+
+  .submenu-layout {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    background-color: white;
+    .ant-btn-primary {
+      background-color: #eaeaea;
+      border-color: #bbbbbb;
+      margin-left: 5px;
+      border-radius: 4%;
+      margin: 5px;
+      color: #6556ae;
+    }
+  }
+}

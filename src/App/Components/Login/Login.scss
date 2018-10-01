@@ -1,0 +1,161 @@
+.root-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../Assets/Images/Optimized-prism-login-bg.jpg');
+    background-size: cover;
+    background-color: black;
+
+    .dot-logo {
+        width: 70px;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+    }
+}
+
+
+.prism-title {
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    font-size: 25px;
+    font-family: segoe ui;
+    justify-content: center;
+    margin-bottom: 30px;
+
+
+    @media (min-width: 768px) {
+        flex: 1;
+    }
+}
+
+.login-container {
+    position: relative;
+    background-color: #00000096;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 850px;
+    max-height: 550px;
+    text-align: center;
+
+    @media (max-width: 991px) {
+        max-height: 100vh;
+    }
+
+    .login-title {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 25px;
+        color: white;
+        margin-top: auto;
+        margin-bottom: 75px;
+
+        .nycstreets-logo {
+            width: 125px;
+            margin-bottom: 2px;
+        }
+
+        .prism-logo {
+            font-size: 34px;
+            color: white;
+            margin-bottom: 5px;
+            width: 140px;
+
+            @media (min-height: 400px) {
+                width: 250px;
+            }
+        }
+
+        .prism-subtitle {
+            font-size: 15px;
+            margin-top: -8px;
+        }
+    }
+
+    .login-form {
+        padding: 10px 25px;
+        margin-bottom: auto;
+        width: 300px;
+
+
+        .ant-form-item-control:not(.has-error) .ant-input {
+            border-bottom: 1px solid white;
+        }
+
+        .ant-form-item-control:not(.has-error) .anticon {
+            color: white;
+        }
+
+        .ant-input:focus {
+            border-bottom: 1px solid #1d7052 !important;
+            -webkit-box-shadow: unset !important;
+            box-shadow: unset !important;
+        }
+
+        .ant-input {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background-color: transparent !important;
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            padding-left: 0 !important;
+        }
+
+        .btn-container {
+            @media (min-height: 400px) {
+                margin-top: 60px;
+            }
+
+            .login-form-button {
+                width: 100%;
+
+                &.disabled, &[disabled] {
+                    background-color: #009966 !important;
+                    border-color: #009966 !important;
+                }
+            }
+        }
+
+        .ant-alert-error {
+            background-color: unset !important;
+            border: none;
+            color: #ffa39e;
+        }
+
+        .ant-alert-info {
+            background-color: unset !important;
+            border: none;
+            color: #91d5ff;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #fff !important;
+        }
+    }
+
+
+    .version-div {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #0a6345a1;
+        color: #d8d8d8;
+        font-size: 12px;
+    }
+}
